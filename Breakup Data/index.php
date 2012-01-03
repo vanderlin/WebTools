@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 <?php
 
 function getLink($u) {
@@ -11,11 +13,41 @@ function getLink($u) {
 	
 
 ?>
+>>>>>>> 2b5042715b6f55c2755b427a1f2e42241158cbf0
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 	<head>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 </head>
 <body>
+<<<<<<< HEAD
+
+<?php
+include_once("BreakupData.php");	
+$bd    = new BreakupData();
+$songs = $bd->getSongs();
+$i = 1;
+foreach($songs as $s) : ?>
+	<?php printObj($s);?>
+	<div class="node">
+	<h2><?php echo $i ?></h2>
+	Artist: <input style="width:600px" type="text" id="artist" value="<?php echo $s["title"] ?>" /><br>
+	Title:  <input style="width:600px" type="text" id="title" value="<?php echo $s["artist"] ?>" /><br>
+	URL: 	<input style="width:600px" type="text" id="url" value="<?php echo $bd->getLink($s) ?>" /><br>
+	<button type="button" class="linkbtn">Get Link</button><br>
+	<button type="button" class="lyrics-visit">Goto Lyrics Page</button><br>
+	<button type="button" class="re-lyrics">Reload Lyrics</button><br>
+
+	<textarea rows="20" cols="100" id="lyrics">
+	<?php //echo $bd->getLyrics($s["artist"], $s["title"]) ?>
+	</textarea>
+	<hr>
+	</div>
+	<?php $i++ ?>
+<?php endforeach; ?> 
+
+<script>
+$(function(){
+=======
 <?php
 include_once("../libs/utils.php");
 
@@ -152,6 +184,7 @@ for($i=0; $i<$len; $i++) {
 
 <script>$
 (function(){
+>>>>>>> 2b5042715b6f55c2755b427a1f2e42241158cbf0
 
 	function getLink(u) {
 		var base 	  = "http://seek.sing365.com/cgi-bin/s.cgi?q=";
@@ -183,6 +216,37 @@ for($i=0; $i<$len; $i++) {
 	
 	console.log("done loading");
 	
+<<<<<<< HEAD
+	// -----------------------------------------
+	$(".linkbtn").click(function() {
+		var u = Array($(this.parentNode).find("#artist").attr("value"),
+					  $(this.parentNode).find("#title").attr("value"));
+		$(this.parentNode).find("#url").attr("value", getLink(u));
+		  
+			console.log(getLink(u));
+	});
+	
+	// -----------------------------------------
+	$(".lyrics-visit").click(function() {
+		var u = Array($(this.parentNode).find("#artist").attr("value"),
+					  $(this.parentNode).find("#title").attr("value"));
+		window.open(getLink(u), "_blank");
+	});
+	
+	// -----------------------------------------
+	$(".re-lyrics").click(function() {
+		console.log("Load");
+		var url = $(this.parentNode).find("#url").attr("value");
+		var me 	= this.parentNode;
+		$.get("BreakupData.php?m=getLyricsURL&url="+url, function(data) {		    
+		    $(me).find("#lyrics").html(data);
+		});
+	});
+	
+	
+	
+		
+=======
 	$("#linkbtn").click(function() {
 		
 		var u = Array($(this.parentNode).find("#artist").attr("value"),
@@ -193,6 +257,7 @@ for($i=0; $i<$len; $i++) {
 	});
 	
 	
+>>>>>>> 2b5042715b6f55c2755b427a1f2e42241158cbf0
 });
 </script>
 
