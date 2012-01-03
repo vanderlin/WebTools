@@ -85,11 +85,7 @@ $(function(){
 		$.get("BreakupData.php?m=getLyricsURL&url="+url, function(data) {		    
 		    $(me).find("#lyrics").html(data);
 		});
-	});
-	
-	
-	
-		
+	});		
 });
 </script>
 
