@@ -1,0 +1,33 @@
+.instagram-item {
+	float:left;
+	position: relative;
+	margin: 0px 5px 5px 0;
+}
+
+.instagram-data {
+	background: rgba(255, 255, 255, 0.5);
+	position: absolute;
+	bottom: -12px;
+	width: 100%;
+	min-height: 30px;
+	overflow: hidden;
+}
+
+.instagram-text {
+	font-style: italic;
+	float: left;
+	margin-left: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 75%;
+	overflow: hidden;
+}
+.instagram-info {
+	font-style: italic;
+	color:#555;
+	float:right;
+	margin-top: 10px;
+	margin-right: 10px;
+	font-size: 10px;
+	overflow: hidden;
+}
